@@ -9,7 +9,7 @@ import (
     "sync"
 
     "google.golang.org/grpc"
-    pb "github.com/DeathStroke19891/block-IOT/protocols"
+    pb "github.com/DeathStroke19891/transactions/transactions"
 )
 
 var (

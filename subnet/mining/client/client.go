@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	pb "github.com/DeathStroke19891/block-IOT/protocols"
+	pb "github.com/DeathStroke19891/transactions/transactions"
 )
 
 var (

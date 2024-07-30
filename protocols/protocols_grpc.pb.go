@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v5.27.2
-// source: protocols/block-IOT.proto
+// source: protocols/protocols.proto
 
-package transactions
+package protocols
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewTransactionsClient(cc grpc.ClientConnInterface) TransactionsClient {
 
 func (c *transactionsClient) CommitTransaction(ctx context.Context, in *Transaction, opts ...grpc.CallOption) (*Status, error) {
 	out := new(Status)
-	err := c.cc.Invoke(ctx, "/transactions.Transactions/CommitTransaction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/protocols.Transactions/CommitTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _Transactions_CommitTransaction_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/transactions.Transactions/CommitTransaction",
+		FullMethod: "/protocols.Transactions/CommitTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TransactionsServer).CommitTransaction(ctx, req.(*Transaction))
@@ -92,7 +92,7 @@ func _Transactions_CommitTransaction_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Transactions_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "transactions.Transactions",
+	ServiceName: "protocols.Transactions",
 	HandlerType: (*TransactionsServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -101,5 +101,5 @@ var Transactions_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protocols/block-IOT.proto",
+	Metadata: "protocols/protocols.proto",
 }

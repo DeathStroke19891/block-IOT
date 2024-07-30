@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = "github.com/DeathStroke19891/transactions/transactions";
+option go_package = "github.com/DeathStroke19891/block-IOT/protocols";
 
-package transactions;
+package protocols;
 
 service Transactions {
   rpc CommitTransaction(Transaction) returns (Status) {}
